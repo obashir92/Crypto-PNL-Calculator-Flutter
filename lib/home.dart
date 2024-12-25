@@ -62,26 +62,29 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 100),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              if (errorMessage.isNotEmpty)
-                Text(
-                  errorMessage,
-                  style: const TextStyle(color: Colors.red, fontSize: 14),
-                ),
-              MyTextField(labelText: 'Size', controller: sizeController),
-              MyTextField(
-                  labelText: 'Entry Price', controller: entryController),
-              MyTextField(labelText: 'Stop Loss', controller: slController),
-              MyTextField(labelText: 'Take Profit', controller: tpController),
-              MyButton(onTap: calculatePnl),
-              MyResult(profit: profit, loss: loss),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 100),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (errorMessage.isNotEmpty)
+                  Text(
+                    errorMessage,
+                    style: const TextStyle(color: Colors.red, fontSize: 14),
+                  ),
+                MyTextField(labelText: 'Size', controller: sizeController),
+                MyTextField(
+                    labelText: 'Entry Price', controller: entryController),
+                MyTextField(labelText: 'Stop Loss', controller: slController),
+                MyTextField(labelText: 'Take Profit', controller: tpController),
+                MyButton(onTap: calculatePnl),
+                MyResult(profit: profit, loss: loss),
+              ],
+            ),
           ),
         ),
       ),
