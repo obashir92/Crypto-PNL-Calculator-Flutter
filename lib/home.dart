@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/mybutton.dart';
-import 'package:myapp/mytextfield.dart';
-import 'package:myapp/myresult.dart';
+import 'package:pnlcalculator/mybutton.dart';
+import 'package:pnlcalculator/mytextfield.dart';
+import 'package:pnlcalculator/myresult.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
